@@ -22,10 +22,16 @@ const app = express();
 const client = new twilio(accountSID, authToken);
 let Message = mongoose.model('Message', messageSchema);                                                     //create model
 app.use(bodyParser.urlencoded({extended: false}));                                                          //format incoming requests
-mongoose.connect(mongoURI, { useNewUrlParser: true }).then( () => {console.log('database connected');});    //connect to mongodb
+/* connect to mongodb */
+mongoose.connect(mongoURI, { useNewUrlParser: true }, function(err){
+  if(err){
+    new error = new Error('connection to database failed');
+    error.status = 500;
+    next(error);
+  }
+});
 
 /* application */
-
 app.get('/', function(req, res, next){
   res.end();
 });

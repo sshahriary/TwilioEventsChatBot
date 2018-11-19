@@ -1,4 +1,11 @@
-/* handle client's texts to service/phone# */
+/*
+** handle client's texts to service/phone#
+** @param {object} req - http request object
+** @param {object} res - http response object
+** @param {function} next - next middleware function
+** @param {object} Message - mongoose model
+** @param {object} client - Twilio client API
+*/
 
 function inboundHandler(req, res, next, Message, client){
 
