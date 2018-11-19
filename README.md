@@ -1,7 +1,7 @@
-# Twilio ChatBot
+<h1>Twilio ChatBot</h1>
 Chat Bot that acts as an RSVP system for an event
 
-#Tech Stack
+<h2>Tech Stack</h2>
 * Twilio (cloud communications provider) SMS API - send and receive text messages
 * Node.js (Express) - server side/public endpoint for communication.
 * Mongoose (mongodb for node.js) - object modeling tool
