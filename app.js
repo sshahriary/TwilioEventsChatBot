@@ -30,4 +30,14 @@ app.get('/', function(req, res, next){
   res.end();
 });
 
+/* on text to chatbot service */
+app.post('/inbound', function(req, res, next){
+  inboundHandler(req, res, next, Message, client);
+});
+
+/* error handler: handles specific errors with custom response object */
+app.use(function (error, req, res, next) {
+  res.status(error.status).send({'status': error.status, 'message': error.message});
+});
+
 module.exports = app;
